@@ -32,5 +32,5 @@ Estudante de **Engenharia de Computação** na **FHO**, cursando o 5º semestre.
 ## 📫 Contato
 
 [![GitHub](https://img.shields.io/badge/GitHub-fevillalon-0d1117?style=for-the-badge&logo=github&logoColor=00ff41)](https://github.com/fevillalon)
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-seu--perfil-0d1117?style=for-the-badge&logo=linkedin&logoColor=00ff41)](https://www.linkedin.com/in/SEU-PERFIL/)
-[![Email](https://img.shields.io/badge/Email-seu--email-0d1117?style=for-the-badge&logo=gmail&logoColor=00ff41)](mailto:SEU-EMAIL@exemplo.com)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-seu--perfil-0d1117?style=for-the-badge&logo=linkedin&logoColor=00ff41)](https://www.linkedin.com/in/felipe-villalón)
+[![Email](https://img.shields.io/badge/Email-seu--email-0d1117?style=for-the-badge&logo=gmail&logoColor=00ff41)](mailto:felipevillalook@gmail.com)
