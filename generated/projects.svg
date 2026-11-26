@@ -21,6 +21,6 @@
 <text x="772" y="34" fill="#4ade80" font-size="11" font-weight="normal" text-anchor="end" xml:space="preserve" >0 projects</text>
 <line x1="24" y1="46" x2="776" y2="46" stroke="#14803a" stroke-opacity=".6"/>
 <rect x="24" y="58" width="752" height="80" rx="10" fill="#030c05" opacity=".6" stroke="#14803a" stroke-opacity=".4"/>
-<text x="52" y="104" fill="#5b8a68" font-size="12" font-weight="normal" text-anchor="start" xml:space="preserve" >no public repositories yet</text><text class="cur" x="270" y="104" fill="#00ff41" font-size="12">_</text>
+<text x="52" y="104" fill="#5b8a68" font-size="12" font-weight="normal" text-anchor="start" xml:space="preserve" >Automation projects are coming soon</text><text class="cur" x="270" y="104" fill="#00ff41" font-size="12">_</text>
 <rect x=".75" y=".75" width="798.5" height="166.5" rx="14" fill="none" stroke="url(#bdpj)" stroke-width="1.5"/>
 </svg>
