@@ -26,10 +26,10 @@ OUT = ROOT / "generated"
 # ============================ CONFIG (edite aqui) ============================
 USER = "fevillalon"
 NAME = "villalón"
-ROLE = "Computer Engineer - FHO 21y"
-PILLS = ["Open Source", "Projects", "Systems"]
-STATUS = "Building | Learning | Shipping"
-ROLE_TERMINAL = "Computer Engineering - FHO 21y"
+ROLE = "Computer Engineering Student | FHO"
+PILLS = ["Python Developer", "Automation", "AI Enthusiast"]
+STATUS = "Learning | Building | Automating"
+ROLE_TERMINAL = "Computer Engineering | 4th Semester"
 CONTACT = f"github.com/{USER}"
 ASCII_COLS, ASCII_ROWS = 60, 30   # tamanho do retrato ASCII
 INVERT_ASCII = False              # True se o retrato ficar "negativo"
