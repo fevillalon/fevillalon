@@ -25,12 +25,20 @@ OUT = ROOT / "generated"
 
 # ============================ CONFIG (edite aqui) ============================
 USER = "fevillalon"
-NAME = "villalón"
+NAME = "fevillalon"
 ROLE = "Computer Engineering Student | FHO"
-PILLS = ["Python Developer", "Automation", "AI Enthusiast"]
+PILLS = ["Python Developer", "Automation", "Learning C", "AI Enthusiast"]
 STATUS = "Learning | Building | Automating"
 ROLE_TERMINAL = "Computer Engineering | 4th Semester"
 CONTACT = f"github.com/{USER}"
+
+# Focus bars are illustrative, not objective skill percentages.
+SKILLS = [
+    ("Python", 85, "Intermediate / Advanced"),
+    ("Automation", 80, "Strong interest / practice"),
+    ("C", 25, "Beginner | Currently learning"),
+    ("Artificial Intelligence", 45, "Exploring"),
+]
 ASCII_COLS, ASCII_ROWS = 60, 30   # tamanho do retrato ASCII
 INVERT_ASCII = False              # True se o retrato ficar "negativo"
 MAX_PROJECTS = 3
@@ -224,10 +232,11 @@ def card_terminal(d, img):
     w, h, u = 800, 340, "tm"
     langs = ", ".join(n for n, _ in d["langs"]) or "Python, C"
     rows = [
-        ("Subject", NAME), ("Handle", "@" + USER), ("Role", ROLE_TERMINAL), ("Status", STATUS),
-        ("Languages", langs), ("Repositories", d["repos"]), ("Contributions", d["contributions"]),
-        ("Stars", d["stars"]), ("Followers", d["followers"]), ("Active Days", d["active_days"]),
-        ("Contact", CONTACT),
+        ("Profile", NAME), ("Handle", "@" + USER),
+        ("Degree", "Computer Engineering | FHO"), ("Progress", "4th semester | 2nd year"),
+        ("Python", "Intermediate / Advanced"), ("C", "Beginner | Learning"),
+        ("Focus", "Automation & practical tools"), ("Interests", "AI & emerging technology"),
+        ("Mindset", STATUS), ("Projects", d["repos"]), ("Contact", CONTACT),
     ]
     right = ""
     for i, (k, v) in enumerate(rows):
@@ -259,7 +268,7 @@ def card_projects(d):
     h = 64 + inner_h + 24
     rows = ""
     if not projs:
-        rows = t(52, 104, "no public repositories yet", DIM, 12) + f'<text class="cur" x="270" y="104" fill="{NEON}" font-size="12">_</text>'
+        rows = t(52, 104, "Automation projects are coming soon", DIM, 12) + f'<text class="cur" x="270" y="104" fill="{NEON}" font-size="12">_</text>'
     for i, p in enumerate(projs):
         y0 = 76 + i * 68
         rows += (f'<rect x="36" y="{y0}" width="728" height="58" rx="8" fill="#051208" stroke="#14803a" stroke-opacity=".6"/>'
@@ -279,22 +288,24 @@ def card_projects(d):
 
 def card_stack(d):
     u, w = "st", 800
-    langs = d["langs"] or [("Python", 100.0)]
-    h = 100 + len(langs) * 36 + 20
+    skills = SKILLS
+    h = 100 + len(skills) * 42 + 20
     rows = ""
-    for i, (name, pct) in enumerate(langs):
-        y = 112 + i * 36
-        bw = max(pct / 100 * 380, 4)
-        rows += (f'<circle cx="52" cy="{y - 4}" r="4" fill="{NEON}" filter="url(#glow{u})"/>'
-                 + t(68, y, name, TXT, 13, "bold")
-                 + f'<rect x="300" y="{y - 11}" width="380" height="9" rx="4.5" fill="#0b1d10"/>'
-                 + f'<rect x="300" y="{y - 11}" width="{bw:.0f}" height="9" rx="4.5" fill="url(#bar{u})"/>'
-                 + t(748, y, f"{pct:.0f}%", G2, 12, "bold", "end"))
+    for i, (name, focus, level) in enumerate(skills):
+        y = 112 + i * 42
+        bw = max(focus / 100 * 380, 4)
+        rows += (
+            f'<circle cx="52" cy="{y - 4}" r="4" fill="{NEON}" filter="url(#glow{u})"/>'
+            + t(68, y, name, TXT, 13, "bold")
+            + f'<rect x="300" y="{y - 11}" width="380" height="9" rx="4.5" fill="#0b1d10"/>'
+            + f'<rect x="300" y="{y - 11}" width="{bw:.0f}" height="9" rx="4.5" fill="url(#bar{u})"/>'
+            + t(748, y, level, G2, 10, "bold", "end")
+        )
     body = f'''
 <defs><linearGradient id="bar{u}" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#22c55e"/><stop offset="1" stop-color="#00ff41"/></linearGradient></defs>
-<text x="28" y="40" fill="{NEON}" font-size="20" font-weight="bold" filter="url(#glow{u})">Language Stack</text>
-{t(28, 62, "Repository-weighted technologies", TXT, 11, "bold")}
-<text x="772" y="40" fill="{G2}" font-size="11" text-anchor="end">&gt; stack.scan <tspan class="cur">_</tspan></text>
+<text x="28" y="40" fill="{NEON}" font-size="20" font-weight="bold" filter="url(#glow{u})">Skills &amp; Focus</text>
+{t(28, 62, "Current skills and learning areas (bars are illustrative)", TXT, 11, "bold")}
+<text x="772" y="40" fill="{G2}" font-size="11" text-anchor="end">&gt; skills.scan <tspan class="cur">_</tspan></text>
 <rect x="24" y="78" width="{w - 48}" height="{h - 98}" rx="10" fill="#030c05" opacity=".6" stroke="#14803a" stroke-opacity=".4"/>
 {rows}'''
     return frame(w, h, body, u)
