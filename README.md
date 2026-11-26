@@ -18,6 +18,7 @@ Estudante de **Engenharia de Computação** na **FHO**, cursando o 5º semestre.
 
 - 🐍 **Python** — nível intermediário (automação, scripts, lógica e estruturas de dados)
 - ⚙️ **C** — em aprendizado (ponteiros, memória, estruturas de dados)
+- 📊 SQL & Banco de Dados — nível iniciante (modelagem conceitual/lógica, normalização e queries básicas)
 - 🎯 Foco atual: projetos práticos, Git/GitHub profissional e fundamentos de sistemas
 
 ## 🛠️ Tecnologias
