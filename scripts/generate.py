@@ -27,9 +27,9 @@ OUT = ROOT / "generated"
 USER = "fevillalon"
 NAME = "fevillalon"
 ROLE = "Computer Engineering Student | FHO"
-PILLS = ["Python Developer", "Automation", "Learning C", "AI Enthusiast"]
-STATUS = "Learning | Building | Automating"
-ROLE_TERMINAL = "Computer Engineering | 4th Semester"
+PILLS = ["Python", "Automation", "C (Learning)", "AI"]
+STATUS = "Always learning & building"
+ROLE_TERMINAL = "Computer Engineering Student | FHO"
 CONTACT = f"github.com/{USER}"
 
 # Focus bars are illustrative, not objective skill percentages.
@@ -230,17 +230,20 @@ def card_header(img):
 
 def card_terminal(d, img):
     w, h, u = 800, 340, "tm"
-    langs = ", ".join(n for n, _ in d["langs"]) or "Python, C"
+    # Keep this panel intentionally minimal: concise, non-redundant profile details.
     rows = [
-        ("Profile", NAME), ("Handle", "@" + USER),
-        ("Degree", "Computer Engineering | FHO"), ("Progress", "4th semester | 2nd year"),
-        ("Python", "Intermediate / Advanced"), ("C", "Beginner | Learning"),
-        ("Focus", "Automation & practical tools"), ("Interests", "AI & emerging technology"),
-        ("Mindset", STATUS), ("Projects", d["repos"]), ("Contact", CONTACT),
+        ("Profile", NAME),
+        ("Degree", "Computer Engineering Student | FHO"),
+        ("Python", "Intermediate / Advanced"),
+        ("C", "Beginner | Learning"),
+        ("Focus", "Automation & practical tools"),
+        (("Interest"), "Artificial Intelligence"),
+        ("Mindset", "Always learning & building"),
+        ("Contact", CONTACT),
     ]
     right = ""
     for i, (k, v) in enumerate(rows):
-        y = 92 + i * 21
+        y = 105 + i * 26
         right += t(350, y, k, G2, 11, "bold") + t(510, y, cut(str(v), 36), TXT, 11)
     art = "".join(t(34, 66 + i * 6.6, ln, NEON, 6.4, extra='opacity=".9"') for i, ln in enumerate(ascii_lines(img)))
     body = f'''
